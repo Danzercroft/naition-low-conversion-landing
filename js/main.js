@@ -149,7 +149,7 @@ document.addEventListener('DOMContentLoaded', () => {
             track('registration_form_success');
 
             if (message) {
-                message.textContent = 'Спасибо! Мы сообщим вам дату нового курса и актуальную стоимость.';
+                message.textContent = 'Заявка отправлена. Мы свяжемся с вами, чтобы подтвердить место на курсе 7–8 ноября.';
                 message.className = 'form-message success';
             }
 

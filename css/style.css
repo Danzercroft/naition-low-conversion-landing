@@ -713,6 +713,16 @@ body.has-scrolled .sticky-cta {
         padding: 14px 16px;
     }
 
+    .hero-text,
+    .hero-meta {
+        display: none;
+    }
+
+    .hero-offer {
+        margin-bottom: 0;
+        font-size: 1.05rem;
+    }
+
     .sticky-cta {
         display: flex;
         bottom: max(12px, env(safe-area-inset-bottom));
@@ -730,4 +740,20 @@ body.has-scrolled .sticky-cta {
         scroll-behavior: auto !important;
         transition-duration: 0.01ms !important;
     }
+}
+
+.hero-offer {
+    margin: 0 0 20px;
+    color: var(--heading);
+    font-size: 1.2rem;
+}
+
+.hero-meta {
+    margin: 0 0 20px;
+}
+
+.hero-meta .meta-card {
+    padding: 14px 18px;
+    box-shadow: none;
+    border: 1px solid #ece7e1;
 }

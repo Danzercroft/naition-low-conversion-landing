@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Первая помощь: практический курс для каждого</title>
-    <meta name="description" content="Очный практический курс первой помощи в Москве. Оставьте контакты, чтобы узнать дату следующего набора и актуальную стоимость.">
+    <meta name="description" content="Курс первой помощи в Москве 7–8 ноября 2026: практика СЛР, помощь при кровотечениях и травмах с инструктором. Группа до 14 человек, от 4 900 ₽.">
     <link rel="stylesheet" href="css/style.css">
     <script src="api/visit.php" defer></script>
     <script src="js/main.js" defer></script>
@@ -28,21 +28,27 @@
     <header class="hero">
         <div class="container hero-layout">
             <div class="hero-content">
-                <span class="hero-badge">Очный практический курс · Москва</span>
-                <h1>Практический курс первой помощи</h1>
+                <span class="hero-badge">Офлайн-курс · 7–8 ноября 2026</span>
+                <h1>Первая помощь: практика с инструктором</h1>
                 <p class="hero-text">
-                    За один день отработаете СЛР, остановку кровотечения и помощь при травмах —
-                    на манекенах и в учебных сценариях. Медицинское образование не требуется.
+                    Отработайте реанимацию, остановку кровотечения и помощь при травмах
+                    на манекенах с инструкторами. Медицинское образование не требуется.
                 </p>
+                <p class="hero-offer"><strong>От 4 900 ₽</strong> · Москва · Группа до 14 человек</p>
+                <div class="meta-grid hero-meta">
+                    <div class="meta-card"><strong>Дата</strong>7–8 ноября 2026, суббота–воскресенье</div>
+                    <div class="meta-card"><strong>Время</strong>10:00 – 18:00, перерыв на обед</div>
+                    <div class="meta-card"><strong>Место</strong>Москва, ул. Примерная, 10, учебный центр «Спаси-Себя»</div>
+                </div>
             </div>
 
             <section class="registration-section hero-registration" id="registration" aria-labelledby="registration-title">
                 <div class="registration-panel">
                     <button type="button" class="modal-close" data-modal-close aria-label="Закрыть форму">×</button>
-                    <span class="form-eyebrow">Без оплаты и подтверждения участия</span>
-                    <h2 class="section-title" id="registration-title">Узнать дату курса</h2>
+                    <span class="form-eyebrow">Оплата на сайте не требуется</span>
+                    <h2 class="section-title" id="registration-title">Записаться на курс 7–8 ноября</h2>
                     <p class="section-lead">
-                        Оставьте имя и телефон — сообщим дату и стоимость следующего набора.
+                        Оставьте имя и телефон — свяжемся, подтвердим место и ответим на вопросы.
                     </p>
                     <form class="form-grid" id="registration-form" action="api/submit.php" method="post">
                         <label>
@@ -54,7 +60,7 @@
                             <input type="tel" name="phone" required autocomplete="tel" inputmode="tel" aria-describedby="phone-hint">
                             <small class="field-hint" id="phone-hint">Например, +7 900 000-00-00</small>
                         </label>
-                        <button type="submit" class="btn" data-cta-placement="hero-form">Узнать о наборе</button>
+                        <button type="submit" class="btn" data-cta-placement="hero-form">Записаться на курс</button>
                         <details class="optional-fields">
                             <summary>Добавить необязательные данные</summary>
                             <div class="optional-fields-content">
@@ -63,13 +69,13 @@
                                     <input type="email" name="email" autocomplete="email">
                                 </label>
                                 <label>
-                                    <span>Что важно узнать о курсе? <span class="optional-indicator">· необязательно</span></span>
+                                    <span>Цель или вопрос по курсу <span class="optional-indicator">· необязательно</span></span>
                                     <textarea name="purpose"></textarea>
                                 </label>
                             </div>
                         </details>
                     </form>
-                    <p class="form-reassurance">Контакт нужен, чтобы ответить на ваш запрос. Это не бронирование и не оплата.</p>
+                    <p class="form-reassurance">Оплата на сайте не требуется. Свяжемся с вами для подтверждения места.</p>
                     <p class="form-message" id="form-message" aria-live="polite"></p>
                 </div>
             </section>
@@ -82,8 +88,8 @@
                     <li>Небольшая группа — до 14 человек</li>
                 </ul>
                 <p class="hero-status">
-                    Дата следующего набора и стоимость уточняются. Оставьте контакты — сообщим
-                    подробности, когда набор откроется.
+                    Практика на манекенах, обратная связь инструктора, сертификат и памятка
+                    по алгоритмам первой помощи включены в каждый тариф.
                 </p>
             </div>
         </div>
@@ -115,7 +121,7 @@
                         <p>До 14 человек в группе, чтобы каждый успел отработать все ключевые навыки несколько раз.</p>
                     </article>
                 </div>
-                <a class="btn section-cta" href="#registration" data-cta-placement="about">Узнать дату и стоимость</a>
+                <a class="btn section-cta" href="#registration" data-cta-placement="about">Записаться на курс</a>
             </div>
         </section>
 
@@ -225,7 +231,7 @@
                         </p>
                     </details>
                 </div>
-                <a class="btn section-cta" href="#registration" data-cta-placement="program">Узнать дату и стоимость</a>
+                <a class="btn section-cta" href="#registration" data-cta-placement="program">Записаться на курс</a>
             </div>
         </section>
 
@@ -344,41 +350,41 @@
 
         <section class="section pricing-section">
             <div class="container">
-                <h2 class="section-title">Форматы участия и стоимость</h2>
+                <h2 class="section-title">Тарифы</h2>
                 <p class="section-lead">
-                    Следующая дата набора и актуальная стоимость пока уточняются. Оставьте контакт —
-                    сообщим подробности, когда откроется запись.
+                    Во все тарифы входят материалы, сертификат и памятка после курса.
+                    Оплата на сайте не требуется.
                 </p>
                 <div class="pricing-grid">
                     <article class="pricing-card">
                         <h3>Базовый</h3>
-                        <div class="price">Стоимость уточняется</div>
+                        <div class="price">4 900 ₽</div>
                         <ul class="pricing-list">
-                            <li>Участие в полном однодневном курсе</li>
+                            <li>Участие в полном курсе</li>
                             <li>Сертификат и памятка</li>
                             <li>Кофе-брейки</li>
                         </ul>
-                        <a class="btn btn-register" href="#registration" data-cta-placement="pricing-basic">Узнать дату и стоимость</a>
+                        <a class="btn btn-register" href="#registration" data-cta-placement="pricing-basic">Записаться на курс</a>
                     </article>
                     <article class="pricing-card featured">
                         <h3>Расширенный</h3>
-                        <div class="price">Стоимость уточняется</div>
+                        <div class="price">7 900 ₽</div>
                         <ul class="pricing-list">
                             <li>Всё из базового тарифа</li>
                             <li>Набор перевязочных материалов</li>
                             <li>Дополнительный практический блок</li>
                         </ul>
-                        <a class="btn btn-register" href="#registration" data-cta-placement="pricing-extended">Узнать дату и стоимость</a>
+                        <a class="btn btn-register" href="#registration" data-cta-placement="pricing-extended">Записаться на курс</a>
                     </article>
                     <article class="pricing-card">
                         <h3>Корпоративный</h3>
-                        <div class="price">Стоимость уточняется</div>
+                        <div class="price">12 900 ₽</div>
                         <ul class="pricing-list">
                             <li>Индивидуальный разбор рисков профессии</li>
                             <li>Консультация для HR или руководителя</li>
                             <li>Отчёт о прохождении для работодателя</li>
                         </ul>
-                        <a class="btn btn-register" href="#registration" data-cta-placement="pricing-corporate">Узнать дату и стоимость</a>
+                        <a class="btn btn-register" href="#registration" data-cta-placement="pricing-corporate">Записаться на курс</a>
                     </article>
                 </div>
             </div>
@@ -393,24 +399,24 @@
                         <p>Нет. Курс рассчитан на людей без медицинской подготовки и помогает отработать базовые действия до приезда медиков.</p>
                     </details>
                     <details class="faq-item">
-                        <summary>Когда и сколько стоит следующий курс?</summary>
-                        <p>Дата набора и стоимость сейчас уточняются. Оставьте имя и телефон — мы сообщим условия, когда они будут известны.</p>
+                        <summary>Когда и сколько стоит курс?</summary>
+                        <p>7–8 ноября 2026, с 10:00 до 18:00. Стоимость — от 4 900 ₽ (базовый), 7 900 ₽ (расширенный), 12 900 ₽ (корпоративный).</p>
                     </details>
                     <details class="faq-item">
                         <summary>Что произойдёт после отправки заявки?</summary>
-                        <p>Мы свяжемся с вами по указанному телефону и расскажем о следующем наборе. Заявка не подтверждает участие и не требует оплаты.</p>
+                        <p>Мы свяжемся с вами по указанному телефону, подтвердим место и ответим на вопросы. Оплата на сайте не требуется.</p>
                     </details>
                     <details class="faq-item">
                         <summary>Где проходит обучение?</summary>
-                        <p>Курс проходит очно в Москве. Точный адрес сообщим вместе с информацией о дате следующего набора.</p>
+                        <p>Очно в Москве: ул. Примерная, 10, учебный центр «Спаси-Себя».</p>
                     </details>
                 </div>
-                <a class="btn section-cta" href="#registration" data-cta-placement="faq">Узнать дату и стоимость</a>
+                <a class="btn section-cta" href="#registration" data-cta-placement="faq">Записаться на курс</a>
             </div>
         </section>
     </main>
 
-    <a class="sticky-cta" href="#registration" data-cta-placement="sticky">Узнать дату и стоимость</a>
+    <a class="sticky-cta" href="#registration" data-cta-placement="sticky">Записаться на курс</a>
 
     <footer class="site-footer">
         <div class="container">
