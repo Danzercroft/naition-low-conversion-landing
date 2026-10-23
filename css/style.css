@@ -66,7 +66,7 @@ img {
 
 .hero-layout {
     display: grid;
-    grid-template-columns: minmax(0, 1.1fr) minmax(320px, 0.9fr);
+    grid-template-columns: minmax(0, 760px);
     align-items: center;
     gap: clamp(32px, 5vw, 72px);
 }
@@ -454,9 +454,48 @@ img {
     background: var(--bg-soft);
 }
 
-.hero-registration {
-    scroll-margin-top: 24px;
+.registration-modal {
+    width: min(480px, calc(100% - 24px));
+    max-height: calc(100dvh - 24px);
+    padding: 0;
+    border: none;
     border-radius: 24px;
+    background: transparent;
+    overflow: auto;
+    color: var(--text);
+}
+
+.registration-modal::backdrop {
+    background: rgba(45, 52, 54, 0.6);
+}
+
+.registration-modal .registration-panel {
+    position: relative;
+}
+
+.modal-close {
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    width: 44px;
+    height: 44px;
+    border: none;
+    border-radius: 50%;
+    background: transparent;
+    color: var(--heading);
+    font-size: 1.8rem;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.modal-close:hover {
+    background: var(--bg-soft);
+}
+
+.btn-primary-cta {
+    margin-bottom: 20px;
+    background: #256b49;
+    color: var(--white);
 }
 
 .registration-panel {
@@ -468,7 +507,7 @@ img {
     box-shadow: var(--shadow);
 }
 
-.hero-registration .registration-panel {
+.registration-modal .registration-panel {
     padding: clamp(24px, 3vw, 36px);
 }
 
@@ -480,11 +519,11 @@ img {
     font-weight: 700;
 }
 
-.hero-registration .section-title {
+.registration-modal .section-title {
     font-size: clamp(1.8rem, 2.5vw, 2.25rem);
 }
 
-.hero-registration .section-lead {
+.registration-modal .section-lead {
     margin-bottom: 20px;
     font-size: 1rem;
 }
@@ -626,32 +665,32 @@ body.has-scrolled .sticky-cta {
         font-size: clamp(2.1rem, 9vw, 3rem);
     }
 
-    .hero-registration .registration-panel {
+    .registration-modal .registration-panel {
         padding: 20px;
     }
 
-    .hero-registration .section-title {
+    .registration-modal .section-title {
         margin-bottom: 8px;
         font-size: 1.65rem;
     }
 
-    .hero-registration .section-lead {
+    .registration-modal .section-lead {
         margin-bottom: 12px;
     }
 
-    .hero-registration .form-grid {
+    .registration-modal .form-grid {
         gap: 10px;
     }
 
-    .hero-registration .form-grid label {
+    .registration-modal .form-grid label {
         gap: 4px;
     }
 
-    .hero-registration .form-grid input {
+    .registration-modal .form-grid input {
         padding: 11px 12px;
     }
 
-    .hero-registration .form-reassurance {
+    .registration-modal .form-reassurance {
         margin-top: 8px;
         font-size: 0.82rem;
     }

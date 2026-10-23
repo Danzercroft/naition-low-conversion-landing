@@ -11,11 +11,47 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
+    const modal = document.getElementById('registration');
+    const openModal = () => {
+        if (!(modal instanceof HTMLDialogElement) || typeof modal.showModal !== 'function') {
+            return;
+        }
+        if (modal.open) {
+            modal.close();
+        }
+        modal.showModal();
+        modal.querySelector('input[name="name"]')?.focus();
+    };
+
+    if (modal instanceof HTMLDialogElement) {
+        modal.addEventListener('click', (event) => {
+            const isBackdropClick = event.target === modal;
+            const isCloseButton = event.target instanceof Element && event.target.closest('[data-modal-close]');
+            if (isBackdropClick || isCloseButton) {
+                modal.close();
+            }
+        });
+        modal.addEventListener('close', () => track('registration_modal_close'));
+        modal.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape' && modal.open) {
+                event.preventDefault();
+                modal.close();
+            }
+        });
+        openModal();
+        track('registration_modal_open', { placement: 'auto' });
+    }
+
     document.querySelectorAll('[data-cta-placement]').forEach((link) => {
-        link.addEventListener('click', () => {
+        link.addEventListener('click', (event) => {
             track('registration_cta_click', {
                 placement: link.dataset.ctaPlacement,
             });
+
+            if (link.getAttribute('href') === '#registration' && modal instanceof HTMLDialogElement) {
+                event.preventDefault();
+                openModal();
+            }
         });
     });
 
