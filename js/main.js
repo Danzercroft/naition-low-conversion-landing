@@ -11,35 +11,33 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    const modal = document.getElementById('registration');
+    const modal = document.getElementById('registration-modal');
+    const section = document.getElementById('registration');
+    const panel = section?.querySelector('.registration-panel');
+    const supportsModal = modal instanceof HTMLDialogElement && typeof modal.showModal === 'function';
+
+    // Одна и та же форма переносится в окно на время показа, чтобы не дублировать id.
     const openModal = () => {
-        if (!(modal instanceof HTMLDialogElement) || typeof modal.showModal !== 'function') {
+        if (modal.open) {
             return;
         }
-        if (modal.open) {
-            modal.close();
-        }
+        modal.appendChild(panel);
         modal.showModal();
         modal.querySelector('input[name="name"]')?.focus();
+        track('registration_modal_open');
     };
 
-    if (modal instanceof HTMLDialogElement) {
+    if (supportsModal && panel) {
         modal.addEventListener('click', (event) => {
-            const isBackdropClick = event.target === modal;
             const isCloseButton = event.target instanceof Element && event.target.closest('[data-modal-close]');
-            if (isBackdropClick || isCloseButton) {
+            if (event.target === modal || isCloseButton) {
                 modal.close();
             }
         });
-        modal.addEventListener('close', () => track('registration_modal_close'));
-        modal.addEventListener('keydown', (event) => {
-            if (event.key === 'Escape' && modal.open) {
-                event.preventDefault();
-                modal.close();
-            }
+        modal.addEventListener('close', () => {
+            section.appendChild(panel);
+            track('registration_modal_close');
         });
-        openModal();
-        track('registration_modal_open', { placement: 'auto' });
     }
 
     document.querySelectorAll('[data-cta-placement]').forEach((link) => {
@@ -48,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 placement: link.dataset.ctaPlacement,
             });
 
-            if (link.getAttribute('href') === '#registration' && modal instanceof HTMLDialogElement) {
+            if (supportsModal && panel && link.getAttribute('href') === '#registration') {
                 event.preventDefault();
                 openModal();
             }

@@ -34,10 +34,9 @@
                     За один день отработаете СЛР, остановку кровотечения и помощь при травмах —
                     на манекенах и в учебных сценариях. Медицинское образование не требуется.
                 </p>
-                <a class="btn btn-primary-cta" href="#registration" data-cta-placement="hero">Узнать дату и стоимость</a>
             </div>
 
-            <dialog class="registration-modal" id="registration" aria-labelledby="registration-title" open>
+            <section class="registration-section hero-registration" id="registration" aria-labelledby="registration-title">
                 <div class="registration-panel">
                     <button type="button" class="modal-close" data-modal-close aria-label="Закрыть форму">×</button>
                     <span class="form-eyebrow">Без оплаты и подтверждения участия</span>
@@ -73,7 +72,8 @@
                     <p class="form-reassurance">Контакт нужен, чтобы ответить на ваш запрос. Это не бронирование и не оплата.</p>
                     <p class="form-message" id="form-message" aria-live="polite"></p>
                 </div>
-            </dialog>
+            </section>
+            <dialog class="registration-modal" id="registration-modal" aria-label="Форма записи"></dialog>
 
             <div class="hero-proof">
                 <ul class="hero-facts">
