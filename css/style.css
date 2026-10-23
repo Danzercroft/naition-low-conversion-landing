@@ -91,6 +91,20 @@ img {
     max-width: 680px;
 }
 
+.hero-status {
+    max-width: 680px;
+    margin: 0 0 20px;
+    padding: 16px 20px;
+    border-left: 5px solid var(--blue);
+    border-radius: 0 12px 12px 0;
+    background: var(--white);
+    color: var(--heading);
+}
+
+.hero-cta {
+    margin-bottom: 8px;
+}
+
 .meta-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -154,8 +168,7 @@ img {
 .feature-card h3,
 .injury-card h3,
 .instructor-card h3,
-.pricing-card h3,
-.program-module h3 {
+.pricing-card h3 {
     margin: 0 0 12px;
     color: var(--heading);
 }
@@ -183,6 +196,36 @@ img {
     border-left: 6px solid var(--blue);
 }
 
+.program-module summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    cursor: pointer;
+    list-style: none;
+    color: var(--heading);
+    font-weight: 700;
+}
+
+.program-module summary::-webkit-details-marker {
+    display: none;
+}
+
+.program-module summary::after {
+    content: "+";
+    flex: 0 0 auto;
+    font-size: 1.5rem;
+    line-height: 1;
+}
+
+.program-module[open] summary::after {
+    content: "−";
+}
+
+.program-module p {
+    margin-bottom: 0;
+}
+
 .program-module:nth-child(2) { border-left-color: var(--mint); }
 .program-module:nth-child(3) { border-left-color: var(--pink); }
 .program-module:nth-child(4) { border-left-color: var(--peach); }
@@ -192,6 +235,18 @@ img {
 .program-intro {
     margin-bottom: 28px;
     font-size: 1.05rem;
+}
+
+.program-highlights {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 12px 24px;
+    margin: 0 0 28px;
+    padding-left: 24px;
+}
+
+.section-cta {
+    margin-top: 28px;
 }
 
 .injury-grid {
@@ -295,7 +350,7 @@ img {
 }
 
 .price {
-    font-size: 2rem;
+    font-size: 1.35rem;
     color: var(--heading);
     font-weight: 700;
 }
@@ -361,6 +416,13 @@ img {
     color: var(--heading);
 }
 
+.required-indicator,
+.optional-indicator {
+    font-size: 0.875rem;
+    font-weight: 400;
+    color: #6c757d;
+}
+
 .form-grid input,
 .form-grid textarea {
     width: 100%;
@@ -369,6 +431,12 @@ img {
     border-radius: 12px;
     font: inherit;
     background: #fff;
+}
+
+.form-grid input:focus,
+.form-grid textarea:focus {
+    outline: 3px solid rgba(73, 126, 151, 0.35);
+    border-color: #497e97;
 }
 
 .form-grid textarea {
@@ -410,5 +478,9 @@ img {
     .registration-panel,
     .hero-note {
         padding: 24px;
+    }
+
+    .hero-status {
+        padding: 14px 16px;
     }
 }

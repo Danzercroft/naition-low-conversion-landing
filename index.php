@@ -26,7 +26,7 @@
 <body>
     <header class="hero">
         <div class="container hero-content">
-            <span class="hero-badge">Офлайн-курс · 15 августа 2026</span>
+            <span class="hero-badge">Очный курс · Москва</span>
             <h1>Первая помощь: практический курс для каждого</h1>
             <p class="hero-text">
                 Научитесь действовать уверенно в экстренной ситуации: остановить кровотечение,
@@ -34,18 +34,23 @@
                 медиков. Курс построен на практике с инструкторами, которые каждый день работают
                 с реальными вызовами.
             </p>
+            <p class="hero-status">
+                Дата следующего набора пока не объявлена. Оставьте контакт — сообщим, когда
+                откроется запись, и расскажем об актуальной стоимости.
+            </p>
+            <a class="btn hero-cta" href="#registration" data-cta-placement="hero">Уведомить о новом наборе</a>
             <div class="meta-grid">
                 <div class="meta-card">
-                    <strong>Дата</strong>
-                    15 августа 2026, суббота
+                    <strong>Формат</strong>
+                    Очное практическое занятие
                 </div>
                 <div class="meta-card">
-                    <strong>Время</strong>
-                    10:00 – 18:00, перерыв на обед
+                    <strong>Продолжительность</strong>
+                    Один день
                 </div>
                 <div class="meta-card">
-                    <strong>Место</strong>
-                    Москва, ул. Примерная, 10, учебный центр «Спаси-Себя»
+                    <strong>Группа</strong>
+                    До 14 человек
                 </div>
             </div>
             <div class="hero-note">
@@ -82,6 +87,7 @@
                         <p>До 14 человек в группе, чтобы каждый успел отработать все ключевые навыки несколько раз.</p>
                     </article>
                 </div>
+                <a class="btn section-cta" href="#registration" data-cta-placement="about">Уведомить о новом наборе</a>
             </div>
         </section>
 
@@ -94,9 +100,14 @@
                     действовать, когда рядом нет медикаментов и оборудования. Каждый модуль включает
                     теорию, демонстрацию инструктора и практику участников.
                 </p>
+                <ul class="program-highlights">
+                    <li>Оценка обстановки, безопасность и вызов помощи</li>
+                    <li>СЛР и работа с тренировочным AED</li>
+                    <li>Кровотечения, травмы, ожоги и итоговые сценарии</li>
+                </ul>
                 <div class="program-list">
-                    <article class="program-module">
-                        <h3>10:00 – 11:00 · Оценка обстановки и безопасность</h3>
+                    <details class="program-module">
+                        <summary>10:00–11:00 · Оценка обстановки и безопасность</summary>
                         <p>
                             Первый час посвящён тому, как не бросаться помогать вслепую и не попасть
                             самому под угрозу. Мы разберём последовательность действий при любом
@@ -109,9 +120,9 @@
                             попытка «оживить» человека не тем способом — и вы отработаете спокойный
                             сценарий на манекене и в паре с напарником.
                         </p>
-                    </article>
-                    <article class="program-module">
-                        <h3>11:00 – 12:30 · Сердечно-легочная реанимация</h3>
+                    </details>
+                    <details class="program-module">
+                        <summary>11:00–12:30 · Сердечно-легочная реанимация</summary>
                         <p>
                             Это центральный блок курса: полтора часа интенсивной практики по алгоритму
                             СЛР для взрослых. Вы научитесь определять, когда нужна реанимация, как
@@ -124,9 +135,9 @@
                             раз пройдёт полный цикл «обнаружил — проверил — начал СЛР — дождался
                             скорой», чтобы руки запомнили движения, а голова — порядок действий.
                         </p>
-                    </article>
-                    <article class="program-module">
-                        <h3>12:30 – 13:30 · Обед и разбор кейсов</h3>
+                    </details>
+                    <details class="program-module">
+                        <summary>12:30–13:30 · Обед и разбор кейсов</summary>
                         <p>
                             После насыщенного утреннего блока — пауза и спокойный разбор реальных
                             историй из практики инструкторов. Мы разберём случаи, когда своевременная
@@ -139,9 +150,9 @@
                             помогает закрепить материал и понять, что ошибки на тренировке — нормальная
                             часть обучения, а на курсе как раз для этого и создана безопасная среда.
                         </p>
-                    </article>
-                    <article class="program-module">
-                        <h3>13:30 – 15:00 · Кровотечения и шок</h3>
+                    </details>
+                    <details class="program-module">
+                        <summary>13:30–15:00 · Кровотечения и шок</summary>
                         <p>
                             После обеда переходим к одной из самых частых причин смертности при
                             травмах — наружным кровотечениям. Вы научитесь отличать капиллярное,
@@ -154,9 +165,9 @@
                             будете работать с имитаторами ран, учиться не бояться крови и действовать
                             системно, даже если вокруг шумно и страшно.
                         </p>
-                    </article>
-                    <article class="program-module">
-                        <h3>15:00 – 16:30 · Переломы, вывихи, ожоги</h3>
+                    </details>
+                    <details class="program-module">
+                        <summary>15:00–16:30 · Переломы, вывихи и ожоги</summary>
                         <p>
                             В этом модуле мы разбираем травмы, с которыми люди чаще всего сталкиваются
                             дома, на улице, на работе и в спорте. Вы научитесь распознавать признаки
@@ -169,9 +180,9 @@
                             сделать временную шину, и каждый участник попробует иммобилизацию на
                             напарнике под контролем группы.
                         </p>
-                    </article>
-                    <article class="program-module">
-                        <h3>16:30 – 18:00 · Итоговая практика и сертификация</h3>
+                    </details>
+                    <details class="program-module">
+                        <summary>16:30–18:00 · Итоговая практика и сертификация</summary>
                         <p>
                             Завершающий блок — это уже не отдельные навыки, а цельные сценарии, как
                             в реальной жизни. Вас ждут упражнения с несколькими пострадавшими,
@@ -184,8 +195,9 @@
                             и знаете, с чего начать, если рядом окажется человек, которому нужна
                             помощь.
                         </p>
-                    </article>
+                    </details>
                 </div>
+                <a class="btn section-cta" href="#registration" data-cta-placement="program">Уведомить о новом наборе</a>
             </div>
         </section>
 
@@ -306,38 +318,39 @@
             <div class="container">
                 <h2 class="section-title">Тарифы</h2>
                 <p class="section-lead">
-                    Выберите формат участия. Во все тарифы входят материалы, сертификат и доступ к памятке после курса.
+                    Следующая дата набора и актуальная стоимость пока уточняются. Оставьте контакт —
+                    сообщим подробности, когда откроется запись.
                 </p>
                 <div class="pricing-grid">
                     <article class="pricing-card">
                         <h3>Базовый</h3>
-                        <div class="price">4 900 ₽</div>
+                        <div class="price">Стоимость уточняется</div>
                         <ul class="pricing-list">
                             <li>Участие в полном однодневном курсе</li>
                             <li>Сертификат и памятка</li>
                             <li>Кофе-брейки</li>
                         </ul>
-                        <button type="button" class="btn btn-register">Записаться</button>
+                        <a class="btn btn-register" href="#registration" data-cta-placement="pricing-basic">Уведомить о наборе</a>
                     </article>
                     <article class="pricing-card featured">
                         <h3>Расширенный</h3>
-                        <div class="price">7 900 ₽</div>
+                        <div class="price">Стоимость уточняется</div>
                         <ul class="pricing-list">
                             <li>Всё из базового тарифа</li>
                             <li>Набор перевязочных материалов</li>
                             <li>Дополнительный практический блок</li>
                         </ul>
-                        <button type="button" class="btn btn-register">Записаться</button>
+                        <a class="btn btn-register" href="#registration" data-cta-placement="pricing-extended">Уведомить о наборе</a>
                     </article>
                     <article class="pricing-card">
                         <h3>Корпоративный</h3>
-                        <div class="price">12 900 ₽</div>
+                        <div class="price">Стоимость уточняется</div>
                         <ul class="pricing-list">
                             <li>Индивидуальный разбор рисков профессии</li>
                             <li>Консультация для HR или руководителя</li>
                             <li>Отчёт о прохождении для работодателя</li>
                         </ul>
-                        <button type="button" class="btn btn-register">Записаться</button>
+                        <a class="btn btn-register" href="#registration" data-cta-placement="pricing-corporate">Уведомить о наборе</a>
                     </article>
                 </div>
             </div>
@@ -346,28 +359,29 @@
         <section class="section registration-section" id="registration">
             <div class="container">
                 <div class="registration-panel">
-                    <h2 class="section-title">Записаться на курс</h2>
+                    <h2 class="section-title">Узнать о следующем наборе</h2>
                     <p class="section-lead">
-                        Оставьте заявку, и мы свяжемся с вами, чтобы подтвердить место и ответить на вопросы.
+                        Оставьте имя и телефон — сообщим дату нового курса и актуальную стоимость.
+                        E-mail и цель прохождения курса можно указать по желанию.
                     </p>
                     <form class="form-grid" id="registration-form" action="api/submit.php" method="post">
                         <label>
-                            Имя
+                            Имя <span class="required-indicator">(обязательно)</span>
                             <input type="text" name="name" required autocomplete="name">
                         </label>
                         <label>
-                            Телефон
+                            Телефон <span class="required-indicator">(обязательно)</span>
                             <input type="tel" name="phone" required autocomplete="tel">
                         </label>
                         <label>
-                            E-mail
-                            <input type="email" name="email" required autocomplete="email">
+                            E-mail <span class="optional-indicator">(необязательно)</span>
+                            <input type="email" name="email" autocomplete="email">
                         </label>
                         <label>
-                            Цель прохождения курса
-                            <textarea name="purpose" required></textarea>
+                            Что важно узнать о курсе? <span class="optional-indicator">(необязательно)</span>
+                            <textarea name="purpose"></textarea>
                         </label>
-                        <button type="submit" class="btn">Отправить заявку</button>
+                        <button type="submit" class="btn">Уведомить меня о наборе</button>
                     </form>
                     <p class="form-message" id="form-message" aria-live="polite"></p>
                 </div>
