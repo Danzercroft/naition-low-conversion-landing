@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Первая помощь: практический курс для каждого</title>
+    <meta name="description" content="Очный практический курс первой помощи в Москве. Оставьте контакты, чтобы узнать дату следующего набора и актуальную стоимость.">
     <link rel="stylesheet" href="css/style.css">
     <script src="api/visit.php" defer></script>
     <script src="js/main.js" defer></script>
@@ -25,38 +26,63 @@
 </head>
 <body>
     <header class="hero">
-        <div class="container hero-content">
-            <span class="hero-badge">Очный курс · Москва</span>
-            <h1>Первая помощь: практический курс для каждого</h1>
-            <p class="hero-text">
-                Научитесь действовать уверенно в экстренной ситуации: остановить кровотечение,
-                провести сердечно-легочную реанимацию, помочь при травмах и ожогах до приезда
-                медиков. Курс построен на практике с инструкторами, которые каждый день работают
-                с реальными вызовами.
-            </p>
-            <p class="hero-status">
-                Дата следующего набора пока не объявлена. Оставьте контакт — сообщим, когда
-                откроется запись, и расскажем об актуальной стоимости.
-            </p>
-            <a class="btn hero-cta" href="#registration" data-cta-placement="hero">Уведомить о новом наборе</a>
-            <div class="meta-grid">
-                <div class="meta-card">
-                    <strong>Формат</strong>
-                    Очное практическое занятие
-                </div>
-                <div class="meta-card">
-                    <strong>Продолжительность</strong>
-                    Один день
-                </div>
-                <div class="meta-card">
-                    <strong>Группа</strong>
-                    До 14 человек
-                </div>
+        <div class="container hero-layout">
+            <div class="hero-content">
+                <span class="hero-badge">Очный практический курс · Москва</span>
+                <h1>Практический курс первой помощи</h1>
+                <p class="hero-text">
+                    За один день отработаете СЛР, остановку кровотечения и помощь при травмах —
+                    на манекенах и в учебных сценариях. Медицинское образование не требуется.
+                </p>
             </div>
-            <div class="hero-note">
-                На курсе вы отработаете навыки на манекенах и отработаете сценарии, которые
-                помогают сохранить спокойствие и принимать правильные решения под давлением времени.
-                После занятия вы получите сертификат и памятку по алгоритмам первой помощи.
+
+            <section class="registration-section hero-registration" id="registration" aria-labelledby="registration-title">
+                <div class="registration-panel">
+                    <span class="form-eyebrow">Без оплаты и подтверждения участия</span>
+                    <h2 class="section-title" id="registration-title">Узнать дату курса</h2>
+                    <p class="section-lead">
+                        Оставьте имя и телефон — сообщим дату и стоимость следующего набора.
+                    </p>
+                    <form class="form-grid" id="registration-form" action="api/submit.php" method="post">
+                        <label>
+                            <span>Имя <span class="required-indicator">· обязательно</span></span>
+                            <input type="text" name="name" required autocomplete="name">
+                        </label>
+                        <label>
+                            <span>Телефон <span class="required-indicator">· обязательно</span></span>
+                            <input type="tel" name="phone" required autocomplete="tel" inputmode="tel" aria-describedby="phone-hint">
+                            <small class="field-hint" id="phone-hint">Например, +7 900 000-00-00</small>
+                        </label>
+                        <button type="submit" class="btn" data-cta-placement="hero-form">Узнать о наборе</button>
+                        <details class="optional-fields">
+                            <summary>Добавить необязательные данные</summary>
+                            <div class="optional-fields-content">
+                                <label>
+                                    <span>E-mail <span class="optional-indicator">· необязательно</span></span>
+                                    <input type="email" name="email" autocomplete="email">
+                                </label>
+                                <label>
+                                    <span>Что важно узнать о курсе? <span class="optional-indicator">· необязательно</span></span>
+                                    <textarea name="purpose"></textarea>
+                                </label>
+                            </div>
+                        </details>
+                    </form>
+                    <p class="form-reassurance">Контакт нужен, чтобы ответить на ваш запрос. Это не бронирование и не оплата.</p>
+                    <p class="form-message" id="form-message" aria-live="polite"></p>
+                </div>
+            </section>
+
+            <div class="hero-proof">
+                <ul class="hero-facts">
+                    <li>8 часов очного обучения с практикой под руководством инструктора</li>
+                    <li>Для участия не требуется медицинское образование</li>
+                    <li>Небольшая группа — до 14 человек</li>
+                </ul>
+                <p class="hero-status">
+                    Дата следующего набора и стоимость уточняются. Оставьте контакты — сообщим
+                    подробности, когда набор откроется.
+                </p>
             </div>
         </div>
     </header>
@@ -87,7 +113,7 @@
                         <p>До 14 человек в группе, чтобы каждый успел отработать все ключевые навыки несколько раз.</p>
                     </article>
                 </div>
-                <a class="btn section-cta" href="#registration" data-cta-placement="about">Уведомить о новом наборе</a>
+                <a class="btn section-cta" href="#registration" data-cta-placement="about">Узнать дату и стоимость</a>
             </div>
         </section>
 
@@ -197,7 +223,7 @@
                         </p>
                     </details>
                 </div>
-                <a class="btn section-cta" href="#registration" data-cta-placement="program">Уведомить о новом наборе</a>
+                <a class="btn section-cta" href="#registration" data-cta-placement="program">Узнать дату и стоимость</a>
             </div>
         </section>
 
@@ -316,7 +342,7 @@
 
         <section class="section pricing-section">
             <div class="container">
-                <h2 class="section-title">Тарифы</h2>
+                <h2 class="section-title">Форматы участия и стоимость</h2>
                 <p class="section-lead">
                     Следующая дата набора и актуальная стоимость пока уточняются. Оставьте контакт —
                     сообщим подробности, когда откроется запись.
@@ -330,7 +356,7 @@
                             <li>Сертификат и памятка</li>
                             <li>Кофе-брейки</li>
                         </ul>
-                        <a class="btn btn-register" href="#registration" data-cta-placement="pricing-basic">Уведомить о наборе</a>
+                        <a class="btn btn-register" href="#registration" data-cta-placement="pricing-basic">Узнать дату и стоимость</a>
                     </article>
                     <article class="pricing-card featured">
                         <h3>Расширенный</h3>
@@ -340,7 +366,7 @@
                             <li>Набор перевязочных материалов</li>
                             <li>Дополнительный практический блок</li>
                         </ul>
-                        <a class="btn btn-register" href="#registration" data-cta-placement="pricing-extended">Уведомить о наборе</a>
+                        <a class="btn btn-register" href="#registration" data-cta-placement="pricing-extended">Узнать дату и стоимость</a>
                     </article>
                     <article class="pricing-card">
                         <h3>Корпоративный</h3>
@@ -350,44 +376,39 @@
                             <li>Консультация для HR или руководителя</li>
                             <li>Отчёт о прохождении для работодателя</li>
                         </ul>
-                        <a class="btn btn-register" href="#registration" data-cta-placement="pricing-corporate">Уведомить о наборе</a>
+                        <a class="btn btn-register" href="#registration" data-cta-placement="pricing-corporate">Узнать дату и стоимость</a>
                     </article>
                 </div>
             </div>
         </section>
 
-        <section class="section registration-section" id="registration">
+        <section class="section faq-section">
             <div class="container">
-                <div class="registration-panel">
-                    <h2 class="section-title">Узнать о следующем наборе</h2>
-                    <p class="section-lead">
-                        Оставьте имя и телефон — сообщим дату нового курса и актуальную стоимость.
-                        E-mail и цель прохождения курса можно указать по желанию.
-                    </p>
-                    <form class="form-grid" id="registration-form" action="api/submit.php" method="post">
-                        <label>
-                            Имя <span class="required-indicator">(обязательно)</span>
-                            <input type="text" name="name" required autocomplete="name">
-                        </label>
-                        <label>
-                            Телефон <span class="required-indicator">(обязательно)</span>
-                            <input type="tel" name="phone" required autocomplete="tel">
-                        </label>
-                        <label>
-                            E-mail <span class="optional-indicator">(необязательно)</span>
-                            <input type="email" name="email" autocomplete="email">
-                        </label>
-                        <label>
-                            Что важно узнать о курсе? <span class="optional-indicator">(необязательно)</span>
-                            <textarea name="purpose"></textarea>
-                        </label>
-                        <button type="submit" class="btn">Уведомить меня о наборе</button>
-                    </form>
-                    <p class="form-message" id="form-message" aria-live="polite"></p>
+                <h2 class="section-title">Частые вопросы</h2>
+                <div class="faq-list">
+                    <details class="faq-item">
+                        <summary>Нужно ли медицинское образование?</summary>
+                        <p>Нет. Курс рассчитан на людей без медицинской подготовки и помогает отработать базовые действия до приезда медиков.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary>Когда и сколько стоит следующий курс?</summary>
+                        <p>Дата набора и стоимость сейчас уточняются. Оставьте имя и телефон — мы сообщим условия, когда они будут известны.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary>Что произойдёт после отправки заявки?</summary>
+                        <p>Мы свяжемся с вами по указанному телефону и расскажем о следующем наборе. Заявка не подтверждает участие и не требует оплаты.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary>Где проходит обучение?</summary>
+                        <p>Курс проходит очно в Москве. Точный адрес сообщим вместе с информацией о дате следующего набора.</p>
+                    </details>
                 </div>
+                <a class="btn section-cta" href="#registration" data-cta-placement="faq">Узнать дату и стоимость</a>
             </div>
         </section>
     </main>
+
+    <a class="sticky-cta" href="#registration" data-cta-placement="sticky">Узнать дату и стоимость</a>
 
     <footer class="site-footer">
         <div class="container">

@@ -55,17 +55,24 @@ img {
 
 .hero {
     min-height: 100vh;
-    display: flex;
+    display: grid;
     align-items: center;
     background:
         radial-gradient(circle at top right, rgba(184, 212, 227, 0.45), transparent 35%),
         radial-gradient(circle at bottom left, rgba(245, 198, 214, 0.35), transparent 30%),
         var(--bg-main);
-    padding: 80px 0 96px;
+    padding: 48px 0;
+}
+
+.hero-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(320px, 0.9fr);
+    align-items: center;
+    gap: clamp(32px, 5vw, 72px);
 }
 
 .hero-content {
-    max-width: 820px;
+    max-width: 700px;
 }
 
 .hero-badge {
@@ -75,34 +82,51 @@ img {
     background: var(--mint);
     color: var(--heading);
     font-size: 0.92rem;
-    margin-bottom: 24px;
+    margin-bottom: 18px;
 }
 
 .hero h1 {
-    margin: 0 0 24px;
-    font-size: clamp(2.4rem, 6vw, 4rem);
+    margin: 0 0 20px;
+    font-size: clamp(2.2rem, 4.3vw, 3.6rem);
     line-height: 1.1;
     color: var(--heading);
 }
 
 .hero-text {
-    margin: 0 0 32px;
-    font-size: 1.15rem;
+    margin: 0 0 20px;
+    font-size: 1.08rem;
     max-width: 680px;
+}
+
+.hero-facts {
+    display: grid;
+    gap: 8px;
+    margin: 0 0 20px;
+    padding: 0;
+    list-style: none;
+}
+
+.hero-facts li {
+    position: relative;
+    padding-left: 28px;
+}
+
+.hero-facts li::before {
+    position: absolute;
+    left: 0;
+    color: #2e7d32;
+    content: "✓";
+    font-weight: 700;
 }
 
 .hero-status {
     max-width: 680px;
-    margin: 0 0 20px;
-    padding: 16px 20px;
+    margin: 0;
+    padding: 14px 18px;
     border-left: 5px solid var(--blue);
     border-radius: 0 12px 12px 0;
     background: var(--white);
     color: var(--heading);
-}
-
-.hero-cta {
-    margin-bottom: 8px;
 }
 
 .meta-grid {
@@ -224,6 +248,41 @@ img {
 
 .program-module p {
     margin-bottom: 0;
+}
+
+.optional-fields {
+    border-top: 1px solid #ece7e1;
+    padding-top: 12px;
+}
+
+.optional-fields summary,
+.faq-item summary {
+    color: var(--heading);
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.optional-fields-content {
+    display: grid;
+    gap: 18px;
+    padding-top: 16px;
+}
+
+.faq-list {
+    display: grid;
+    gap: 12px;
+    max-width: 860px;
+}
+
+.faq-item {
+    padding: 20px 24px;
+    border-radius: 16px;
+    background: var(--white);
+    box-shadow: var(--shadow);
+}
+
+.faq-item p {
+    margin: 12px 0 0;
 }
 
 .program-module:nth-child(2) { border-left-color: var(--mint); }
@@ -395,6 +454,11 @@ img {
     background: var(--bg-soft);
 }
 
+.hero-registration {
+    scroll-margin-top: 24px;
+    border-radius: 24px;
+}
+
 .registration-panel {
     max-width: 760px;
     margin: 0 auto;
@@ -404,9 +468,30 @@ img {
     box-shadow: var(--shadow);
 }
 
+.hero-registration .registration-panel {
+    padding: clamp(24px, 3vw, 36px);
+}
+
+.form-eyebrow {
+    display: inline-block;
+    margin-bottom: 12px;
+    color: #356b4a;
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+.hero-registration .section-title {
+    font-size: clamp(1.8rem, 2.5vw, 2.25rem);
+}
+
+.hero-registration .section-lead {
+    margin-bottom: 20px;
+    font-size: 1rem;
+}
+
 .form-grid {
     display: grid;
-    gap: 18px;
+    gap: 14px;
 }
 
 .form-grid label {
@@ -416,11 +501,21 @@ img {
     color: var(--heading);
 }
 
+.form-grid label > span:first-child {
+    display: block;
+}
+
 .required-indicator,
 .optional-indicator {
     font-size: 0.875rem;
     font-weight: 400;
     color: #6c757d;
+}
+
+.field-hint {
+    color: #626b67;
+    font-size: 0.875rem;
+    font-weight: 400;
 }
 
 .form-grid input,
@@ -439,9 +534,32 @@ img {
     border-color: #497e97;
 }
 
+.form-grid input[aria-invalid="true"],
+.form-grid textarea[aria-invalid="true"] {
+    border-color: #c0392b;
+}
+
 .form-grid textarea {
-    min-height: 140px;
+    min-height: 100px;
     resize: vertical;
+}
+
+.form-grid button[type="submit"] {
+    width: 100%;
+    min-height: 52px;
+    background: #256b49;
+    color: var(--white);
+}
+
+.form-grid button[type="submit"]:hover {
+    background: #1e563a;
+}
+
+.form-reassurance {
+    margin: 12px 0 0;
+    color: #626b67;
+    font-size: 0.9rem;
+    text-align: center;
 }
 
 .form-message {
@@ -458,6 +576,30 @@ img {
     color: #c0392b;
 }
 
+.sticky-cta {
+    position: fixed;
+    z-index: 10;
+    right: 16px;
+    bottom: 16px;
+    left: 16px;
+    display: none;
+    justify-content: center;
+    padding: 14px 20px;
+    border-radius: 999px;
+    background: #256b49;
+    box-shadow: 0 8px 24px rgba(25, 54, 39, 0.24);
+    color: var(--white);
+    font-weight: 700;
+    text-align: center;
+    text-decoration: none;
+    transform: translateY(calc(100% + 24px));
+    transition: transform 0.2s ease;
+}
+
+body.has-scrolled .sticky-cta {
+    transform: translateY(0);
+}
+
 .site-footer {
     padding: 28px 0 40px;
     text-align: center;
@@ -472,7 +614,46 @@ img {
 
     .hero {
         min-height: auto;
-        padding-top: 56px;
+        padding: 40px 0;
+    }
+
+    .hero-layout {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+
+    .hero h1 {
+        font-size: clamp(2.1rem, 9vw, 3rem);
+    }
+
+    .hero-registration .registration-panel {
+        padding: 20px;
+    }
+
+    .hero-registration .section-title {
+        margin-bottom: 8px;
+        font-size: 1.65rem;
+    }
+
+    .hero-registration .section-lead {
+        margin-bottom: 12px;
+    }
+
+    .hero-registration .form-grid {
+        gap: 10px;
+    }
+
+    .hero-registration .form-grid label {
+        gap: 4px;
+    }
+
+    .hero-registration .form-grid input {
+        padding: 11px 12px;
+    }
+
+    .hero-registration .form-reassurance {
+        margin-top: 8px;
+        font-size: 0.82rem;
     }
 
     .registration-panel,
@@ -482,5 +663,23 @@ img {
 
     .hero-status {
         padding: 14px 16px;
+    }
+
+    .sticky-cta {
+        display: flex;
+        bottom: max(12px, env(safe-area-inset-bottom));
+    }
+
+    body.has-scrolled {
+        padding-bottom: 68px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
     }
 }

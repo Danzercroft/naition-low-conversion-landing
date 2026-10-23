@@ -19,16 +19,37 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    const hero = document.querySelector('.hero');
+    const stickyCta = document.querySelector('.sticky-cta');
+    if (hero && stickyCta && 'IntersectionObserver' in window) {
+        const heroObserver = new IntersectionObserver(([entry]) => {
+            document.body.classList.toggle('has-scrolled', !entry.isIntersecting);
+        });
+        heroObserver.observe(hero);
+    }
+
     if (!form) {
         return;
     }
 
     let formStarted = false;
 
-    form.addEventListener('input', () => {
+    form.addEventListener('input', (event) => {
         if (!formStarted) {
             formStarted = true;
             track('registration_form_start');
+        }
+
+        const target = event.target;
+        if (target instanceof HTMLInputElement || target instanceof HTMLTextAreaElement) {
+            if (target.validity.valid) {
+                target.removeAttribute('aria-invalid');
+            }
+
+            if (message) {
+                message.textContent = '';
+                message.className = 'form-message';
+            }
         }
     });
 
@@ -37,12 +58,21 @@ document.addEventListener('DOMContentLoaded', () => {
         (event) => {
             const target = event.target;
             if (target instanceof HTMLInputElement || target instanceof HTMLTextAreaElement) {
+                target.setAttribute('aria-invalid', 'true');
                 track('registration_form_validation_error', {
                     field: target.name,
                 });
 
-                if (message) {
-                    message.textContent = 'Проверьте обязательные поля и исправьте отмеченные ошибки.';
+                if (message && !message.textContent) {
+                    const fieldLabels = {
+                        name: 'Имя',
+                        phone: 'Телефон',
+                        email: 'E-mail',
+                        purpose: 'Комментарий',
+                    };
+                    message.textContent = target.validity.valueMissing
+                        ? `Заполните поле «${fieldLabels[target.name] || 'данные'}».`
+                        : 'Проверьте формат введённых данных.';
                     message.className = 'form-message error';
                 }
             }
